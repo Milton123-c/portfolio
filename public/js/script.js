@@ -1,3 +1,4 @@
+emailjs.init('user_ONMsuh8BFzPRobb2B51bD');
 
 const menuClick = () => {
 
@@ -46,7 +47,7 @@ const scrollNabvar = () => {
 
 }
 
-const scrollRevealNew = () =>{
+const scrollRevealNew = () => {
     ScrollReveal({
         // reset: true,
         distance: '80px',
@@ -54,16 +55,16 @@ const scrollRevealNew = () =>{
         delay: 200
     });
 
-    ScrollReveal().reveal(".home-content, .heading", {origin: 'top'});
-    ScrollReveal().reveal(".home-img, .services-container, .portfolio-box, .contact form", {origin: 'bottom'});
-    ScrollReveal().reveal(".home-content h1, .about-img", {origin: 'left'});
-    ScrollReveal().reveal(".home-content p, .about-content", {origin: 'right'});
+    ScrollReveal().reveal(".home-content, .heading", { origin: 'top' });
+    ScrollReveal().reveal(".home-img, .services-container, .portfolio-box, .contact form", { origin: 'bottom' });
+    ScrollReveal().reveal(".home-content h1, .about-img", { origin: 'left' });
+    ScrollReveal().reveal(".home-content p, .about-content", { origin: 'right' });
 
 }
 
 const workTyped = () => {
 
-    const typed = new Typed(".multiple-text" , {
+    const typed = new Typed(".multiple-text", {
         strings: ['Frontend Developer', 'Web full-stack'],
         typeSpeed: 100,
         backSpeed: 100,
@@ -71,11 +72,47 @@ const workTyped = () => {
         loop: true
     });
 
+}
+
+
+
+const sendGmail = () => {
+    const form = document.querySelector("#form__send");
+   
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+      
+        const { name, email, subject, message, phone } = event.target;
+
+        if(!name.value || !email.value || !subject || !message.value || !phone.value) return alertify.alert("Error", "There can be no empty fields")
+
+        
+
+        emailjs.send("service_bf63uuq","template_01vm2wf",{
+            from_name: subject.value,
+            to_name: name.value,
+            email: email.value,
+            telefono: phone.value,
+            message: message.value,
+            })
+            .then(()=>{
+                alertify.alert('Your Message has been sent', 'Thanks you for your message!');
+            }, (error)=>{
+                alert(JSON.stringify(error));
+                alertify.alert("Error sending message", "Sorry there was an error sending the message")
+            });
+
+
+    });
 
 }
+
+
 
 menuClick();
 scrollNabvar();
 scrollRevealNew();
 workTyped();
+sendGmail();
 

@@ -14,10 +14,21 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- alertify -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
     <!-- script src -->
 
     <!-- scrollReveal -->
     <script src="https://unpkg.com/scrollreveal" defer></script>
+
+    <!-- send gmail  -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+
+    <!-- script alertify -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js" defer></script>
 
     <!-- typed js -->
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js" defer></script>
@@ -62,7 +73,7 @@
                 <a href="https://wa.link/06cx87"><box-icon type='logo' name='whatsapp'></box-icon></a>
                 <a href="#"><box-icon name='instagram-alt' type='logo'></box-icon></a>
                 <a href="https://www.linkedin.com/in/milton-david-gago-mercado-395834187/"><box-icon name='linkedin'
-                        type='logo'></box-icon></a>
+                        type='logo'></box-icon></a>|
             </div>
             <a href="/public/document/CV.pdf" class="btn">Download CV</a>
         </div>
@@ -187,17 +198,17 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#">
+        <form id="form__send">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Full Name" name="name" required>
+                <input type="email" placeholder="Email Address" name="email" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subjects">
+                <input type="number" placeholder="Mobile Number" name="phone" required>
+                <input type="text" placeholder="Email Subjects" name="subject" required>
             </div>
 
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea id="" cols="30" rows="10" placeholder="Your Message" name="message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
@@ -207,7 +218,7 @@
 
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &Copy; 2023 All Right Reserved.</p>
+            <p>Copyright © Copy || 2023 All Right Reserved.</p>
         </div>
 
         <div class="footer-iconTop">
