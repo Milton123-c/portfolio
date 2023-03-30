@@ -575,3 +575,8 @@ span{
 .ajs-error{
   background: rgb(216, 13, 125) !important;
 }
+
+.galleta img{
+   object-fit: cover;
+   height: 100%;
+}
