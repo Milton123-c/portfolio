@@ -115,4 +115,3 @@ scrollNabvar();
 scrollRevealNew();
 workTyped();
 sendGmail();
-
