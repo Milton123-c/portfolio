@@ -65,7 +65,7 @@ const scrollRevealNew = () => {
 const workTyped = () => {
 
     const typed = new Typed(".multiple-text", {
-        strings: ['Frontend Developer', 'Web full-stack'],
+        strings: ['Front-end Developer', 'Web full-stack'],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,
