@@ -73,7 +73,9 @@ const sendGmail = () => {
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-    
+        const disable = event.target.submit; 
+        disable.disabled = true;
+        disable.style.backgroundColor = "rgb(60, 145, 151)"
         const { name, email, subject, message, phone } = event.target;
         if(!name.value || !email.value || !subject || !message.value || !phone.value) return alertify.alert("Error", "There can be no empty fields")
 
@@ -85,9 +87,11 @@ const sendGmail = () => {
             message: message.value,
             })
             .then(()=>{
+                disable.style.backgroundColor = "#0ef";
                 alertify.alert('Your Message has been sent', 'Thanks you for your message!');
             }, (error)=>{
                 alert(JSON.stringify(error));
+                disable.style.backgroundColor = "#0ef";
                 alertify.alert("Error sending message", "Sorry there was an error sending the message")
             });
     });
