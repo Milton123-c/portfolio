@@ -1,7 +1,6 @@
 emailjs.init('user_ONMsuh8BFzPRobb2B51bD');
 
 const menuClick = () => {
-
     const menuIcon = document.querySelector("#menu-icon");
     const navbar = document.querySelector(".navbar");
 
@@ -9,9 +8,9 @@ const menuClick = () => {
         menuIcon.classList.toggle("bx-x");
         navbar.classList.toggle("active");
     }
-
 }
 
+console.log("hola mundo")
 
 const scrollNabvar = () => {
     let sections = document.querySelectorAll("section");
@@ -32,19 +31,17 @@ const scrollNabvar = () => {
                 });
             }
         });
+        
         let header = document.querySelector("header");
 
         header.classList.toggle("sticky", window.scrollY > 100);
 
-
         const menuIcon = document.querySelector("#menu-icon");
         const navbar = document.querySelector(".navbar");
-
 
         menuIcon.classList.remove("bx-x");
         navbar.classList.remove("active");
     };
-
 }
 
 const scrollRevealNew = () => {
@@ -59,11 +56,9 @@ const scrollRevealNew = () => {
     ScrollReveal().reveal(".home-img, .services-container, .portfolio-box, .contact form", { origin: 'bottom' });
     ScrollReveal().reveal(".home-content h1, .about-img", { origin: 'left' });
     ScrollReveal().reveal(".home-content p, .about-content", { origin: 'right' });
-
 }
 
 const workTyped = () => {
-
     const typed = new Typed(".multiple-text", {
         strings: ['Front-end Developer', 'Web full-stack'],
         typeSpeed: 100,
@@ -71,25 +66,18 @@ const workTyped = () => {
         backDelay: 1000,
         loop: true
     });
-
 }
-
-
 
 const sendGmail = () => {
     const form = document.querySelector("#form__send");
-   
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-      
+    
         const { name, email, subject, message, phone } = event.target;
-
         if(!name.value || !email.value || !subject || !message.value || !phone.value) return alertify.alert("Error", "There can be no empty fields")
 
-        
-
-        emailjs.send("service_bf63uuq","template_01vm2wf",{
+        emailjs.send("service_2utftqq","template_01vm2wf",{
             from_name: subject.value,
             to_name: name.value,
             email: email.value,
@@ -102,13 +90,8 @@ const sendGmail = () => {
                 alert(JSON.stringify(error));
                 alertify.alert("Error sending message", "Sorry there was an error sending the message")
             });
-
-
     });
-
 }
-
-
 
 menuClick();
 scrollNabvar();

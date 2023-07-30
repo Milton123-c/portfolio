@@ -1,0 +1,12 @@
+{
+    "console-ninja.output.showLogsFromLogPointsOnly": true,
+    "console-ninja.captureFunctions": true,
+    "console-ninja.toolsToEnableSupportAutomaticallyFor": {
+        "live-server-extension": true,
+        "live-preview-extension": true
+    },
+    "console-ninja.installBinToPath": true,
+    "console-ninja.allowedHosts": [
+        "0.0.0.0:3000"
+    ]
+}
